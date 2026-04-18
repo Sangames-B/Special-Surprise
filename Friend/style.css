@@ -1,0 +1,159 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black; 
+    z-index: 2000; /* Stays on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes video fill the whole screen */
+}
+
+/* Updated to include all your screens and overlays */
+.screen, .overlay, #login-screen, #question-screen, #penalty-screen, #final-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Updated Glassmorphism Box */
+.glass-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* These lines stack the input and button */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    min-width: 320px;
+}
+
+.glass-box h2 {
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Styling the input field */
+.glass-box input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    outline: none;
+    font-size: 1rem;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    z-index: 100;
+}
+
+.hidden { display: none !important; }
+
+video { width: 300px; margin-bottom: 20px; border-radius: 10px; }
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+#no-btn { 
+    position: absolute; 
+    transition: all 0.2s ease; /* Makes the jump smoother on desktop */
+} 
+
+.btn-group { 
+    margin-top: 20px; 
+    display: flex; 
+    justify-content: center;
+    gap: 50px; 
+    position: relative; 
+    width: 100%;
+    min-height: 60px; 
+    align-items: center;
+}
+
+#yes-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 40px;
+    z-index: 10;
+    margin-right: 140px;
+}
+
+#no-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 40px;
+    /* Keep this absolute for the jumping logic */
+    position: absolute; 
+    transition: all 0.15s ease;
+    display: inline-block;
+    left: calc(50% + 10px);
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    background: #ff7e5f;
+    color: white;
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.95);
+
+}
+
+#confetti-overlay {
+    transition: opacity 0.8s ease;
+    opacity: 1;
+}
+
+#confetti-overlay.fade-out {
+    opacity: 0;
+}
