@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/wrong_answer.png" type="image/x-icon">
+    <title>Special Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="screen">
+        <div class="glass-box">
+            <h2>Enter Your Name</h2>
+            <input type="text" id="name-input" placeholder="Your name here..." autofocus>
+            <button onclick="checkName()">Enter</button>
+        </div>
+    </div>
+
+    <div id="idiot-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h1>Don't you know your name idiot???</h1>
+            <p>Try again in <span id="idiot-timer">3</span>...</p>
+        </div>
+    </div>
+
+    <div id="access-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h1>Access Granted.</h1>
+            <p>Get ready for the final and Important question in:</p>
+            <h2 id="access-timer">10</h2>
+        </div>
+    </div>
+
+    <div id="video-transition-container" class="video-overlay hidden">
+        <video id="transition-video" playsinline muted preload="auto">
+            <source src="assets/atom_bomb.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="question-screen" class="screen hidden">
+        <img id="question-image" src="assets/correct_name_reveal.png" alt="Question Image">
+        <h1>Will you be my best friend?</h1>
+        <div class="btn-group">
+            <button id="yes-btn" onclick="playConfettiTransition()">Yes!</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+
+    <div id="confetti-overlay" class="video-overlay hidden">
+        <video id="confetti-transition-video" playsinline muted preload="auto">
+            <source src="assets/Confetti.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="penalty-screen" class="screen hidden">
+        <img id="penalty-image" src="assets/wrong_answer.png" alt="Penalty Image">
+        <h1>Try again and choose carefully:</h1>
+        <h2 id="penalty-timer">3</h2>
+    </div>
+
+    <div id="final-screen" class="screen hidden">
+        <video id="final-video" loop playsinline>
+            <source src="assets/Happy.mp4" type="video/mp4">
+        </video>
+        <h1>Yay!, i knew you would choose me!!! 😊</h1>
+        <button id="play-music-btn" onclick="startParty()">Click to Celebrate!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
