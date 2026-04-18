@@ -1,5 +1,5 @@
 /* --- 1. CONFIGURATION & STATE --- */
-const PREDEFINED_NAME = "Suba"; 
+const PREDEFINED_NAME = "Subalakshmi"; 
 const MOVE_LIMIT = 5; 
 let noButtonMoveCount = 0; 
 
