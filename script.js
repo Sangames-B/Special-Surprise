@@ -86,7 +86,7 @@ function startAccessCountdown() {
     const overlay = document.getElementById('access-overlay');
     const timerText = document.getElementById('access-timer');
     overlay.classList.remove('hidden');
-    let count = 3; // Keep it short for a snappy feel
+    let count = 10; // Keep it short for a snappy feel
     const interval = setInterval(() => {
         count--;
         timerText.innerText = count;
