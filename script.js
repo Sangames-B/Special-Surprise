@@ -68,7 +68,7 @@ function triggerIdiotPenalty() {
     const overlay = document.getElementById('idiot-overlay');
     const timerText = document.getElementById('idiot-timer');
     overlay.classList.remove('hidden');
-    let count = 3;
+    let count = 10;
     const interval = setInterval(() => {
         count--;
         timerText.innerText = count;
