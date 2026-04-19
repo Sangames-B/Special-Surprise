@@ -1,5 +1,5 @@
-/* --- 1. CONFIGURATION & STATE --- */
-const PREDEFINED_NAME = "Subalakshmi"; 
+/* --- 1. CONFIGURATION & STATE --- */ 
+const VALID_NAMES = ["joe", "subalakshmi"];
 const MOVE_LIMIT = 5; 
 let noButtonMoveCount = 0; 
 
@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- 3. NAME CHECK LOGIC --- */
 function checkName() {
-    const input = document.getElementById('name-input').value;
-    if (input.toLowerCase().trim() === PREDEFINED_NAME.toLowerCase()) {
+    const input = document.getElementById('name-input').value.toLowerCase().trim();
+    if (VALID_NAMES.includes(input)) {
         startAccessCountdown();
     } else {
         triggerIdiotPenalty();
@@ -86,7 +86,7 @@ function startAccessCountdown() {
     const overlay = document.getElementById('access-overlay');
     const timerText = document.getElementById('access-timer');
     overlay.classList.remove('hidden');
-    let count = 10; // Keep it short for a snappy feel
+    let count = 3; // Keep it short for a snappy feel
     const interval = setInterval(() => {
         count--;
         timerText.innerText = count;
